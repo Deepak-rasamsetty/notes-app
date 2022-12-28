@@ -8,6 +8,7 @@ import TextUtility from "./TextUtility";
 import Home from "./Home";
 import React from "react";
 import UserRegistration from "./UserRegistration";
+import JiraDashboard from "./JiraDashboard";
 
 function SubApp() {
   console.log('SubApp is rendered');
@@ -23,6 +24,7 @@ function SubApp() {
             <Route path="/todo" element={<Todo />} />
             <Route path="/TextUtil" element={<TextUtility />} />
             <Route path="/register" element={<UserRegistration />} />
+            <Route path="/jira" element={<JiraDashboard />} />
           </Routes>
         </div>
       </BrowserRouter>

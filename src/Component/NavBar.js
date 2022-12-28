@@ -79,6 +79,11 @@ export default function NavBar() {
                   Register
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/jira">
+                  Jira
+                </Link>
+              </li>
             </ul>
             <div className="form-check form-switch">
               <input

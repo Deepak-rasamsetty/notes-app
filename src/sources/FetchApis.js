@@ -1,5 +1,5 @@
 export async function fetchNotes(func) {
-  await fetch("http://localhost:8080/todo/getNotesForUser/1", {
+  await fetch("http://localhost:8080/todo/getNotesForUser/2", {
     method: "GET",
     headers: {
       Accept: "*/*",
@@ -20,13 +20,12 @@ export async function fetchNotes(func) {
      
     }).catch(
       (error) => {
-
         func(null);
       })
 }
 
 export const fetchPendingNotesCount = async (func) => {
-  await fetch("http://localhost:8080/todo/getPendingCountForUser/1", {
+  await fetch("http://localhost:8080/todo/getPendingCountForUser/2", {
     method: "GET",
     headers: {
       Accept: "*/*",
@@ -69,3 +68,46 @@ export const deleteNoteApi = async (noteId) => {
     },
   });
 };
+
+export const fetchRegisterUser = async(request)=>{
+  await fetch('http://localhost:8081/user/register', {
+    method: "POST",
+    headers: {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    },body: JSON.stringify(request),
+  }).then(response=>console.log(response))
+}
+
+export const createJiraApi = async(request)=>{
+  await fetch('http://localhost:8082/jira/', {
+    method: "POST",
+    headers: {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    },body: JSON.stringify(request),
+  }).then(response=>console.log(response))
+}
+
+export const updateJiraApi = async(request)=>{
+  await fetch('http://localhost:8082/jira/', {
+    method: "PUT",
+    headers: {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    },body: JSON.stringify(request),
+  }).then(response=>console.log(response))
+}
+
+export const fetchAllJira = async (func) => {
+  await fetch("http://localhost:8082/jira", {
+    method: "GET",
+    headers: {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => func(data));
+};
+

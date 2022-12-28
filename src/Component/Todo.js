@@ -16,7 +16,7 @@ export default function Todo() {
 async function updateNewNoteAndReload(newNote){
   console.log('Todo, in updateNewNoteAndReload');
   var request={
-    "userId":"1",
+    "userId":"2",
     "note": newNote
 }
   await addNewNote(request);
